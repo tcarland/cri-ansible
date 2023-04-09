@@ -56,5 +56,5 @@
       dest: '/etc/systemd/user/buildkit.service'
       mode: '0644'
   become: true
-  when: deploy_rootlesskit == true
+  when: enable_rootlesskit == true
 
