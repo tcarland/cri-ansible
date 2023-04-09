@@ -41,7 +41,7 @@
       state: started
   become: true
 
-- name: Download and install nerdctl
+- name: Download and Install 'nerdctl'
   block:
   - name: Acquire nerdctl
     get_url: 
@@ -60,4 +60,4 @@
       path: '/tmp/{{ nerdctl_archive }}'
       state: absent
   become: true
-  when: enable_nerdctl == true
+  when: enable_nerdctl == true or enable_rootlesskit == true
