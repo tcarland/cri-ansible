@@ -1,0 +1,6 @@
+---
+container_engine: "containerd"
+enable_nerdctl: true
+enable_buildkit: true
+enable_rootlesskit: true
+

@@ -1,0 +1,14 @@
+---
+- name: Install dependencies (Debian/Ubuntu)
+  apt:
+    name: '{{ cri_apt_packages }}'
+    state: present
+  become: true
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: Install dependencies (Debian/Ubuntu)
+  apt:
+    name: '{{ cri_apt_packages }}'
+    state: present
+  become: true
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

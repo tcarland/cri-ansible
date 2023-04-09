@@ -1,0 +1,6 @@
+*.sw*
+*.rpm
+*.tar*
+*.jar
+*.zip
+.ansible

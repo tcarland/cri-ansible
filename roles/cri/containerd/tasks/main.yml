@@ -1,0 +1,63 @@
+---
+- name: Download and Install containerd
+  block:
+  - name: Acquire containerd archive
+    get_url:
+      url: '{{ containerd_url }}/{{ containerd_archive }}'
+      dest: '/tmp/{{ containerd_archive }}'
+      checksum: 'sha256:{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
+      mode: '0444'
+  - name: Extract containerd archive
+    unarchive: 
+      src: '/tmp/{{ containerd_archive }}'
+      dest: '/usr/local'
+      remote_src: 'yes'
+  - name: Cleanup containerd archive
+    file:
+      path: '/tmp/{{ containerd_archive }}'
+      state: absent
+  - name: Create containerd config dir
+    file:
+      path: '/etc/containerd'
+      state: directory
+      mode: '0755'
+  - name: Configure containerd
+    shell: 'containerd config default > /etc/containerd/config.toml'
+  - name: Install service config (system)
+    copy:
+      src: 'containerd.service'
+      dest: '/etc/systemd/system/containerd.service'
+      mode: '0644'
+  - name: Install CNI config
+    copy: 
+      src: '10-cri-net.conf'
+      dest: '/etc/cni/net.d/'
+      mode: '0644'
+  - name: Enable systemd service
+    systemd:
+      name: 'containerd'
+      daemon_reload: true
+      enabled: true
+      state: started
+  become: true
+
+- name: Download and install nerdctl
+  block:
+  - name: Acquire nerdctl
+    get_url: 
+      url: '{{ nerdctl_url }}/{{ nerdctl_archive }}'
+      dest: '/tmp/{{ nerdctl_archive }}'
+      checksum: 'sha256:{{ nerdctl_sha256 }}'
+      mode: '0444'
+  - name: Extract nerdctl
+    unarchive:
+      src: '/tmp/{{ nerdctl_archive }}'
+      dest: '/usr/local/bin'
+      remote_src: 'yes'
+      mode: '0755'
+  - name: Cleanup nerdctl archive
+    file:
+      path: '/tmp/{{ nerdctl_archive }}'
+      state: absent
+  become: true
+  when: enable_nerdctl == true
