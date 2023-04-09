@@ -12,7 +12,7 @@ roles for installing support for *buildkit* and *rootless* containers.
 
 There are other container engine playbooks related to Kubernetes, such as 
 *Kubespray*, but this playbook is intended more for development or desktop
-environments that prefer to either replace Docker or closer emulate a 
+environments that prefer to either replace Docker or closer emulate  
 production non-docker nodes.
 
 ## Components Matrix
