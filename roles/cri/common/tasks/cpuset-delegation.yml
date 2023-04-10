@@ -1,12 +1,12 @@
 ---
 - name: Enable CPU, CPUSET, and I/O Delegation
   block:
-  - name: Create systemd directory
+  - name: Create systemd delegate service directory
     file:
       path: '/etc/systemd/system/user@.service.d'
       state: directory
       mode: '0755'
-  - name: Create service config
+  - name: Create cpu delegate service config
     copy:
       src: 'delegate.conf'
       dest: '/etc/systemd/system/user@.service.d/delegate.conf'

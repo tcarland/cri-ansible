@@ -8,11 +8,11 @@
 
 - name: Install dependencies (RHEL/Ubuntu)
   block:
-  - name: Install req. yum packages
+  - name:  yum packages
     apt:
       name: '{{ cri_apt_packages }}'
       state: present
-  - name: Set kernel.unprivileged_userns_clone=1
+  - name: set sysctl kernel.unprivileged_userns_clone=1
     copy:
       src: '99-rootless.conf'
       dest: '/etc/sysctl.d'
@@ -21,6 +21,5 @@
   become: true
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: Enable CPU, CPUSET, and I/O Delegation
-  include: 'cpuset-delegation.yml'
+- include: 'cpuset-delegation.yml'
   when: enable_cpu_delegation == true
