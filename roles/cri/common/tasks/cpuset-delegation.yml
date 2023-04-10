@@ -1,0 +1,15 @@
+---
+- name: Enable CPU, CPUSET, and I/O Delegation
+  block:
+  - name: Create systemd directory
+    file:
+      path: '/etc/systemd/system/user@.service.d'
+      state: directory
+      mode: '0755'
+  - name: Create service config
+    copy:
+      src: 'delegate.conf'
+      dest: '/etc/systemd/system/user@.service.d/delegate.conf'
+      mode: '0644'
+    notify: 'systemd_reload'
+  become: true

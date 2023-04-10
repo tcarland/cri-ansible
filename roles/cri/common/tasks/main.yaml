@@ -6,9 +6,21 @@
   become: true
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- name: Install dependencies (Debian/Ubuntu)
-  apt:
-    name: '{{ cri_apt_packages }}'
-    state: present
+- name: Install dependencies (RHEL/Ubuntu)
+  block:
+  - name: Install req. yum packages
+    apt:
+      name: '{{ cri_apt_packages }}'
+      state: present
+  - name: Set kernel.unprivileged_userns_clone=1
+    copy:
+      src: '99-rootless.conf'
+      dest: '/etc/sysctl.d'
+      mode: '0644'
+    notify: 'sysctl_reload'
   become: true
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Enable CPU, CPUSET, and I/O Delegation
+  include: 'cpuset-delegation.yml'
+  when: enable_cpu_delegation == true
