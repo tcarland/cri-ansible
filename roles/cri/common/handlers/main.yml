@@ -3,6 +3,6 @@
   shell: 'sysctl --system'
   become: true
 
-- name: systemd reload
+- name: systemd_reload
   ansible.builtin.systemd:
     daemon_reload: true
