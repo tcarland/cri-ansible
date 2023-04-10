@@ -29,9 +29,9 @@
       dest: '/etc/systemd/system/containerd.service'
       mode: '0644'
   - name: Install CNI config
-    copy: 
-      src: '10-cri-net.conf'
-      dest: '/etc/cni/net.d/'
+    template: 
+      src: '10-cri-net.conf.j2'
+      dest: '/etc/cni/net.d/10-cri-net.conf'
       mode: '0644'
   - name: Enable systemd service
     systemd:
