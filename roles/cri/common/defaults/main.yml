@@ -1,6 +1,12 @@
 ---
 container_engine: "containerd"
+cni_subnet: "175.17.1.0/24"
+cni_name: "crinet"
+cni_interface: "cni0"
+cni_plugin_type: "bridge"
+
 enable_nerdctl: true
 enable_buildkit: true
 enable_rootlesskit: true
+enable_cpu_delegation: false
 

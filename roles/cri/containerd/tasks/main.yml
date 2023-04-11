@@ -28,10 +28,10 @@
       src: 'containerd.service'
       dest: '/etc/systemd/system/containerd.service'
       mode: '0644'
-  - name: Install CNI config
-    copy: 
-      src: '10-cri-net.conf'
-      dest: '/etc/cni/net.d/'
+  - name: Install default CNI config
+    template: 
+      src: '10-cri-net.conf.j2'
+      dest: '/etc/cni/net.d/10-cri-net.conf'
       mode: '0644'
   - name: Enable systemd service
     systemd:
@@ -41,23 +41,5 @@
       state: started
   become: true
 
-- name: Download and Install 'nerdctl'
-  block:
-  - name: Acquire nerdctl
-    get_url: 
-      url: '{{ nerdctl_url }}/{{ nerdctl_archive }}'
-      dest: '/tmp/{{ nerdctl_archive }}'
-      checksum: 'sha256:{{ nerdctl_sha256 }}'
-      mode: '0444'
-  - name: Extract nerdctl
-    unarchive:
-      src: '/tmp/{{ nerdctl_archive }}'
-      dest: '/usr/local/bin'
-      remote_src: 'yes'
-      mode: '0755'
-  - name: Cleanup nerdctl archive
-    file:
-      path: '/tmp/{{ nerdctl_archive }}'
-      state: absent
-  become: true
+- include: nerdctl.yml
   when: enable_nerdctl == true or enable_rootlesskit == true

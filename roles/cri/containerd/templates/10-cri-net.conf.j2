@@ -1,13 +1,13 @@
 {
   "cniVersion": "1.0.0",
-  "name": "cri-net",
-  "type": "bridge",
-  "bridge": "cni0",
+  "name": "{{ cni_name }}",
+  "type": "{{ cni_plugin_type }}",
+  "bridge": "{{ cni_interface }}",
   "isGateway": true,
   "ipMasq": true,
   "ipam": {
     "type": "host-local",
-    "subnet": "10.10.3.0/24",
+    "subnet": "{{ cni_subnet }}",
     "routes": [
       { "dst": "0.0.0.0/0" }
     ]
