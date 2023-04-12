@@ -5,8 +5,18 @@ cni_name: "crinet"
 cni_interface: "cni0"
 cni_plugin_type: "bridge"
 
+# Additional components
 enable_nerdctl: true
 enable_buildkit: true
 enable_rootlesskit: true
 enable_cpu_delegation: false
 
+# Configure a private registry
+registry_host: ''
+registry_cacert: ''
+
+# Creates a symlink from docker to nerdctl
+create_docker_link: false
+
+# Set the userspace cni config (rootlesskit)
+set_user_cni_config: true
