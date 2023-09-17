@@ -1,6 +1,6 @@
 ---
 # note mismatched use of 'v' on version
-containerd_version: '1.7.3'
+containerd_version: '1.7.5'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
@@ -28,7 +28,7 @@ nerdctl_sha256: '6dc945e3dfdc38e77ceafd2ec491af753366a3cf83fefccb1debaed3459829f
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: '3f8c494e3c6a265fe2a3c41ef9d6bc859eeeb22095b3353d3558d8120833a23a'
 
-buildkit_version: 'v0.12.1'
+buildkit_version: 'v0.12.2'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
