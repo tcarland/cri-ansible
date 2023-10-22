@@ -1,6 +1,6 @@
 ---
 # note mismatched use of 'v' on version
-containerd_version: '1.7.6'
+containerd_version: '1.7.7'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
@@ -21,14 +21,14 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: '8dc78774f7cbeaf787994d386eec663f0a3cf24de1ea4893598096cb39ef2508'
 
 # note mismatched use of 'v' on version
-nerdctl_version: '1.6.0'
+nerdctl_version: '1.6.2'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: 'fc3e7eef775eff85eb6c16b2761a574e83de444831312bc92e755a1f5577872d'
+nerdctl_sha256: '67991fc144b03596f15be6c20ca112d10bd92ad467414e95b0f1d60d332ae34e'
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: '2c5c43a8b77ed62090241027361baa62d8fb70a759bc9e7a82c637135598701f'
+nerdctl_full_sha256: '37678f27ad341a7c568c5064f62bcbe90cddec56e65f5d684edf8ca955c3e6a4'
 
-buildkit_version: 'v0.12.2'
+buildkit_version: 'v0.12.3'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
