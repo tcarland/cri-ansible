@@ -1,6 +1,6 @@
 ---
 # note mismatched use of 'v' on version
-containerd_version: '1.7.8'
+containerd_version: '1.7.9'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
