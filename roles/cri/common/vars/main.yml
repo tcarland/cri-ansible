@@ -1,6 +1,6 @@
 ---
 # note mismatched use of 'v' on version
-containerd_version: '1.7.9'
+containerd_version: '1.7.10'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
@@ -10,7 +10,7 @@ runc_version: "v1.1.10"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
 runc_sha256: '81f73a59be3d122ab484d7dfe9ddc81030f595cc59968f61c113a9a38a2c113a'
 
-cni_plugin_version: 'v1.3.0'
+cni_plugin_version: 'v1.4.0'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
 cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_target: '/opt/cni/bin'
@@ -21,14 +21,15 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: '8dc78774f7cbeaf787994d386eec663f0a3cf24de1ea4893598096cb39ef2508'
 
 # note mismatched use of 'v' on version
-nerdctl_version: '1.7.0'
+nerdctl_version: '1.7.1'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: '844c47b175a3d6bc8eaad0c51f23624a5ef10c09e55607803ec2bc846fb04df9'
+nerdctl_sha256: '5fc0a6e8c3a71cbba95fbdb6833fb8a7cd8e78f53de10988362d4029c14b905a'
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: '8a3bdc24eef1b7366a678f206aff37ce7ae22f184ad24ed723a92420796b68ca'
+nerdctl_full_sha256: '7c174a9ccc4dffdef08fe43eeb99e62ed00d7a4fd0b3a2fe60b3bfdd044c9135'
 
-buildkit_version: 'v0.12.3'
+
+buildkit_version: 'v0.12.4'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
