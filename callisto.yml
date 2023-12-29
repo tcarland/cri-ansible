@@ -1,0 +1,12 @@
+all:
+  hosts:
+    callisto:
+      ansible_host: callisto
+      cni_subnet: "10.10.3.0/24"
+  vars:
+    container_engine: "containerd"
+    enable_nerdctl: true
+    enable_buildkit: true
+    enable_rootlesskit: true
+    enable_cpu_delegation: true
+    create_docker_link: true
