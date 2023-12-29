@@ -5,7 +5,7 @@
     get_url:
       url: '{{ containerd_url }}/{{ containerd_archive }}'
       dest: '/tmp/{{ containerd_archive }}'
-      checksum: 'sha256:{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
+      checksum: 'sha256:{{ containerd_sha256 }}.sha256sum'
       mode: '0444'
   - name: Extract containerd archive
     unarchive: 
