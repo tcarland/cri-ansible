@@ -1,4 +1,6 @@
 ---
+cri_ansible_version: 'v24.02.01'
+
 # note mismatched use of 'v' on version is intentional
 containerd_version: '1.7.13'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
