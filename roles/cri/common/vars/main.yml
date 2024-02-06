@@ -1,15 +1,17 @@
 ---
+cri_ansible_version: 'v24.02.01'
+
 # note mismatched use of 'v' on version is intentional
-containerd_version: '1.7.12'
+containerd_version: '1.7.13'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{containerd_url }}/{{ containerd_archive }}.sha256sum'
 containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
 containerd_service_target: '/etc/systemd/system/containerd.service'
 
-runc_version: "v1.1.11"
+runc_version: "v1.1.12"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
-runc_sha256: '77ae134de014613c44d25e6310a57a219a7a91155cd47d069a0f22a2cad5caea'
+runc_sha256: 'aadeef400b8f05645768c1476d1023f7875b78f52c7ff1967a6dbce236b8cbd8'
 
 cni_plugin_version: 'v1.4.0'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
@@ -22,14 +24,15 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: 'd16a1ffb3938f5a19d5c8f45d363bd091ef89c0bc4d44ad16b933eede32fdcbb'
 
 # note mismatched use of 'v' on version
-nerdctl_version: '1.7.2'
+nerdctl_version: '1.7.3'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: 'aed7d33d645bfb97c8df978d952a1e1f7e02b0b3ed2c0089ee4285af7f8f971b'
-nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: '5ea4524ff346000bb32ef1d9fb8c4b8e809fbff69260d179218d7c308cc2aa99'
+nerdctl_sha256: 'ee93ffe6f90e50bde153a9a0dd779594e0bc13a26949053965958b91b6dffdd0'
 
-buildkit_version: 'v0.12.4'
+nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
+nerdctl_full_sha256: 'f373aab78f04379557285590ee60ed953d12c9a60e08a52ba159004cf5e3d212'
+
+buildkit_version: 'v0.12.5'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
