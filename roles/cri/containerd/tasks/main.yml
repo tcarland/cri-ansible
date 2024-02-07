@@ -5,7 +5,7 @@
     get_url:
       url: '{{ containerd_url }}/{{ containerd_archive }}'
       dest: '/tmp/{{ containerd_archive }}'
-      checksum: 'sha256:{{ containerd_sha256 }}.sha256sum'
+      checksum: 'sha256:{{ containerd_sha256 }}'
       mode: '0444'
   - name: Extract containerd archive
     unarchive: 
@@ -73,5 +73,5 @@
   become: true
   when: registry_host
 
-- include: nerdctl.yml
+- ansible.builtin.include_tasks: "nerdctl.yml"
   when: enable_nerdctl == true or enable_rootlesskit == true
