@@ -24,27 +24,27 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: 'd16a1ffb3938f5a19d5c8f45d363bd091ef89c0bc4d44ad16b933eede32fdcbb'
 
 # note mismatched use of 'v' on version
-nerdctl_version: '1.7.3'
+nerdctl_version: '1.7.4'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: 'ee93ffe6f90e50bde153a9a0dd779594e0bc13a26949053965958b91b6dffdd0'
+nerdctl_sha256: '71aee9d987b7fad0ff2ade50b038ad7e2356324edc02c54045960a3521b3e6a7'
 
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: 'f373aab78f04379557285590ee60ed953d12c9a60e08a52ba159004cf5e3d212'
+nerdctl_full_sha256: '1585adc24269e4dddc174a213b0ce3e71e9cdd92431bb15688995405fb6eb36c'
 
 buildkit_version: 'v0.12.5'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
-rootlesskit_version: 'v2.0.0'
+rootlesskit_version: 'v2.0.1'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
-rootlesskit_sha256: '8205e3f96ca9eb576a0b182455fb5ad1067bf019a7fe50a1816f6c04b581723f'
+rootlesskit_sha256: '6b1ecb61a48d85e6b41c4a67b81f6db47f626e010a481666a1859776b45439aa'
 
-slirp4netns_version: 'v1.2.2'
+slirp4netns_version: 'v1.2.3'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
 slirp4netns_binary: 'slirp4netns-x86_64'
-slirp4netns_sha256: '2b59dd438ec1814dcd00c3106c0288ca174c3fe9a178f3400baa06818edaae8d'
+slirp4netns_sha256: '2051ae25baba59c96f42bf2b7b7efa2eabb022e497b6c4b692b1428d2b2d1f5b'
 
 cri_apt_packages:
   - net-tools
