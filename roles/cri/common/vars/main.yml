@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v24.02.07'
+cri_ansible_version: 'v24.03.19'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '1.7.14'
@@ -24,15 +24,15 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: 'd16a1ffb3938f5a19d5c8f45d363bd091ef89c0bc4d44ad16b933eede32fdcbb'
 
 # note mismatched use of 'v' on version
-nerdctl_version: '1.7.4'
+nerdctl_version: '1.7.5'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: '71aee9d987b7fad0ff2ade50b038ad7e2356324edc02c54045960a3521b3e6a7'
+nerdctl_sha256: '775f8bddd5e93acc4162c568dd6b84d5925549180991b83cfd4b7e33d4844921'
 
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: '1585adc24269e4dddc174a213b0ce3e71e9cdd92431bb15688995405fb6eb36c'
+nerdctl_full_sha256: 'adb246a4ef15b8f3d7eed4c6b61173014a6cf343e43ad95eae2087b454dcae5d'
 
-buildkit_version: 'v0.13.0'
+buildkit_version: 'v0.13.1'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 
