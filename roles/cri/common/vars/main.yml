@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v24.03.19'
+cri_ansible_version: 'v24.04.15'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '1.7.14'
+containerd_version: '1.7.15'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{containerd_url }}/{{ containerd_archive }}.sha256sum'
