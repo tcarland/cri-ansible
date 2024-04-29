@@ -5,6 +5,7 @@
     get_url:
       url: '{{ buildkit_url }}/{{ buildkit_archive }}'
       dest: '/tmp/{{ buildkit_archive }}'
+      checksum: 'sha256:{{ buildkit_sha256 }}'
       mode: '0444'
   - name: Extract buildkit
     unarchive:
