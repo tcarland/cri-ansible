@@ -8,18 +8,19 @@
 
 - name: Install dependencies (RHEL/Ubuntu)
   block:
-  - name:  yum packages
-    apt:
-      name: '{{ cri_apt_packages }}'
-      state: present
-  - name: set sysctl kernel.unprivileged_userns_clone=1
-    copy:
-      src: '99-rootless.conf'
-      dest: '/etc/sysctl.d'
-      mode: '0644'
-    notify: 'sysctl_reload'
+    - name: yum packages
+      apt:
+        name: '{{ cri_apt_packages }}'
+        state: present
+    - name: set sysctl kernel.unprivileged_userns_clone=1
+      copy:
+        src: '99-rootless.conf'
+        dest: '/etc/sysctl.d'
+        mode: '0644'
+      notify: 'sysctl_reload'
   become: true
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- ansible.builtin.include_tasks: 'cpuset-delegation.yml'
-  when: enable_cpu_delegation == true
+- name: cpuset delegation
+  ansible.builtin.include_tasks: 'cpuset-delegation.yml'
+  when: enable_cpu_delegation

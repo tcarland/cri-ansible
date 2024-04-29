@@ -1,22 +1,22 @@
 ---
 - name: Download and install Rootlesskit
   block:
-  - name: Acquire rootlesskit
-    get_url:
-      url: '{{ rootlesskit_url }}/{{ rootlesskit_archive }}'
-      dest: '/tmp/{{ rootlesskit_archive }}'
-      checksum: 'sha256:{{ rootlesskit_sha256 }}'
-      mode : '0444'
-  - name: Extract rootlesskit
-    unarchive:
-      src: '/tmp/{{ rootlesskit_archive }}'
-      dest: '/usr/local/bin'
-      remote_src: 'yes'
-      mode: '0755'
-  - name: Cleanup rootlesskit archive
-    file:
-      path: '/tmp/{{ rootlesskit_archive }}'
-      state: absent
+    - name: Acquire rootlesskit
+      get_url:
+        url: '{{ rootlesskit_url }}/{{ rootlesskit_archive }}'
+        dest: '/tmp/{{ rootlesskit_archive }}'
+        checksum: 'sha256:{{ rootlesskit_sha256 }}'
+        mode: '0444'
+    - name: Extract rootlesskit
+      unarchive:
+        src: '/tmp/{{ rootlesskit_archive }}'
+        dest: '/usr/local/bin'
+        remote_src: 'yes'
+        mode: '0755'
+    - name: Cleanup rootlesskit archive
+      file:
+        path: '/tmp/{{ rootlesskit_archive }}'
+        state: absent
   become: true
 
 - name: Download and install slirp net

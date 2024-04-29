@@ -1,11 +1,11 @@
 ---
 - hosts: all
-  gather_facts: True
+  gather_facts: true
   roles:
-    - { role: "cri/common", tags: "containerd" }
-    - { role: "cri/runc", tags: "containerd" }
-    - { role: "cri/containerd", tags: "containerd", when: container_engine == "containerd" }
-    - { role: "cri/cni-plugins", tags: "containerd" }
-    - { role: "cri/crictl", tags: "containerd" }
-    - { role: "cri/buildkit", tags: "containerd", when: enable_buildkit }
-    - { role: "cri/rootlesskit", tags: "containerd", when: enable_rootlesskit }
+    - {role: "cri/common", tags: "containerd"}
+    - {role: "cri/runc", tags: "containerd"}
+    - {role: "cri/containerd", tags: "containerd", when: container_engine == "containerd"}
+    - {role: "cri/cni-plugins", tags: "containerd"}
+    - {role: "cri/crictl", tags: "containerd"}
+    - {role: "cri/buildkit", tags: "containerd", when: enable_buildkit}
+    - {role: "cri/rootlesskit", tags: "containerd", when: enable_rootlesskit}

@@ -6,7 +6,7 @@ containerd_version: '1.7.16'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{containerd_url }}/{{ containerd_archive }}.sha256sum'
-containerd_service_file : 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
+containerd_service_file: 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
 containerd_service_target: '/etc/systemd/system/containerd.service'
 
 runc_version: "v1.1.12"
