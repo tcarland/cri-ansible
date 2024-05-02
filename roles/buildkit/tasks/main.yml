@@ -1,60 +1,60 @@
 ---
 - name: Download and install BuildKit
+  become: true
   block:
     - name: Acquire buildkit
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ buildkit_url }}/{{ buildkit_archive }}'
         dest: '/tmp/{{ buildkit_archive }}'
         checksum: 'sha256:{{ buildkit_sha256 }}'
         mode: '0444'
     - name: Extract buildkit
-      unarchive:
+      ansible.builtin.unarchive:
         src: '/tmp/{{ buildkit_archive }}'
         dest: '/usr/local'
         remote_src: 'yes'
         mode: '0755'
     - name: Cleanup buildkit archive
-      file:
+      ansible.builtin.file:
         path: '/tmp/{{ buildkit_archive }}'
         state: absent
     - name: Create buildkit config dir
-      file:
+      ansible.builtin.file:
         path: '/etc/buildkit'
         state: directory
         mode: '0755'
     - name: Set buildkitd config
-      copy:
+      ansible.builtin.copy:
         src: 'buildkitd.toml'
         dest: '/etc/buildkit/'
         mode: '0644'
     - name: Set systemd service file
-      copy:
+      ansible.builtin.copy:
         src: 'buildkit-system.service'
         dest: '/etc/systemd/system/buildkit.service'
         mode: '0644'
     - name: Set systemd socket file
-      copy:
+      ansible.builtin.copy:
         src: 'buildkit-system.socket'
         dest: '/etc/systemd/system/buildkit.socket'
         mode: '0644'
-  become: true
 
 - name: Install user system services
+  become: true
+  when: enable_rootlesskit
   block:
     - name: Set systemd user proxy service
-      copy:
+      ansible.builtin.copy:
         src: 'buildkit-proxy.service'
         dest: '/etc/systemd/user/buildkit-proxy.service'
         mode: '0644'
     - name: Set systemd user proxy socket
-      copy:
+      ansible.builtin.copy:
         src: 'buildkit-proxy.socket'
         dest: '/etc/systemd/user/buildkit-proxy.socket'
         mode: '0644'
     - name: Set systemd user service
-      copy:
+      ansible.builtin.copy:
         src: 'buildkit-user.service'
         dest: '/etc/systemd/user/buildkit.service'
         mode: '0644'
-  become: true
-  when: enable_rootlesskit

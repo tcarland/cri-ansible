@@ -2,9 +2,9 @@ name: Ansible Lint
 
 on:
   push:
-    tags: [ "v*" ]
+    tags: ["v*"]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
 
 jobs:
   ansible-lint:

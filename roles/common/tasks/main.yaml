@@ -1,26 +1,26 @@
 ---
 - name: Install dependencies (Debian/Ubuntu)
-  apt:
-    name: '{{ cri_apt_packages }}'
-    state: present
   become: true
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  ansible.builtin.apt:
+    name: '{{ cri_apt_packages }}'
+    state: present
 
 - name: Install dependencies (RHEL/Ubuntu)
+  become: true
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   block:
-    - name: yum packages
-      apt:
+    - name: Install yum packages
+      ansible.builtin.apt:
         name: '{{ cri_apt_packages }}'
         state: present
-    - name: set sysctl kernel.unprivileged_userns_clone=1
-      copy:
+    - name: Set sysctl kernel.unprivileged_userns_clone=1
+      ansible.builtin.copy:
         src: '99-rootless.conf'
         dest: '/etc/sysctl.d'
         mode: '0644'
-      notify: 'sysctl_reload'
-  become: true
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+      notify: 'Sysctl_reload'
 
-- name: cpuset delegation
+- name: Delegate cpuset
   ansible.builtin.include_tasks: 'cpuset-delegation.yml'
   when: enable_cpu_delegation

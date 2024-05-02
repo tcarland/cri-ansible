@@ -1,24 +1,24 @@
 ---
 - name: Download and Install CNI plugins
+  become: true
   block:
     - name: Acquire CNI Plugins archive
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ cni_plugin_url }}/{{ cni_plugin_archive }}'
         dest: '/tmp/{{ cni_plugin_archive }}'
         checksum: 'sha256:{{ cni_plugin_url }}/{{ cni_plugin_archive }}.sha256'
         mode: '0444'
     - name: Create target CNI directory
-      file:
+      ansible.builtin.file:
         path: '{{ cni_plugin_target }}'
         state: directory
         mode: '0755'
     - name: Extract plugins
-      unarchive:
+      ansible.builtin.unarchive:
         src: '/tmp/{{ cni_plugin_archive }}'
         dest: '{{ cni_plugin_target }}'
         remote_src: 'yes'
     - name: Cleanup plugin archive
-      file:
+      ansible.builtin.file:
         path: '/tmp/{{ cni_plugin_archive }}'
         state: absent
-  become: true

@@ -1,26 +1,26 @@
 ---
 - name: Download and Install of cri-tools (crictl)
+  become: true
   block:
     - name: Acquire cri-tools archive
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ cri_tools_url }}/{{ cri_tools_archive }}'
         dest: '/tmp/{{ cri_tools_archive }}'
         # checksum: 'sha256:{{ cri_tools_url }}/{{ cri_tools_archive }}.sha256'
         checksum: 'sha256:{{ cri_tools_sha256 }}'
         mode: '0444'
     - name: Extract cri-tools
-      unarchive:
+      ansible.builtin.unarchive:
         src: '/tmp/{{ cri_tools_archive }}'
         dest: '/usr/local/bin/'
         remote_src: 'yes'
         mode: '0755'
     - name: Configure crictl
-      copy:
+      ansible.builtin.copy:
         src: 'crictl.yaml'
         dest: '/etc/crictl.yaml'
         mode: '0644'
     - name: Cleanup cri-tools archive
-      file:
+      ansible.builtin.file:
         path: '/tmp/{{ cri_tools_archive }}'
         state: absent
-  become: true
