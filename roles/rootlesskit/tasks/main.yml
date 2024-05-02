@@ -1,0 +1,35 @@
+---
+- name: Download and install Rootlesskit
+  become: true
+  block:
+    - name: Acquire rootlesskit
+      ansible.builtin.get_url:
+        url: '{{ rootlesskit_url }}/{{ rootlesskit_archive }}'
+        dest: '/tmp/{{ rootlesskit_archive }}'
+        checksum: 'sha256:{{ rootlesskit_sha256 }}'
+        mode: '0444'
+    - name: Extract rootlesskit
+      ansible.builtin.unarchive:
+        src: '/tmp/{{ rootlesskit_archive }}'
+        dest: '/usr/local/bin'
+        remote_src: 'yes'
+        mode: '0755'
+    - name: Cleanup rootlesskit archive
+      ansible.builtin.file:
+        path: '/tmp/{{ rootlesskit_archive }}'
+        state: absent
+
+- name: Download and install slirp net
+  become: true
+  ansible.builtin.get_url:
+    url: '{{ slirp4netns_url }}/{{ slirp4netns_binary }}'
+    dest: '/usr/local/bin/slirp4netns'
+    checksum: 'sha256:{{ slirp4netns_sha256 }}'
+    mode: '0755'
+
+- name: Install containerd rootless service
+  ansible.builtin.shell: 'CONTAINERD_NAMESPACE=default containerd-rootless-setuptool.sh install'
+
+- name: Install buildkit rootless service
+  when: enable_buildkit
+  ansible.builtin.shell: 'CONTAINERD_NAMESPACE=default containerd-rootless-setuptool.sh install-buildkit-containerd'

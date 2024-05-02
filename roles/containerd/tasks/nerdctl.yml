@@ -1,0 +1,28 @@
+---
+- name: Download and Install 'nerdctl'
+  become: true
+  block:
+    - name: Acquire nerdctl
+      ansible.builtin.get_url:
+        url: '{{ nerdctl_url }}/{{ nerdctl_archive }}'
+        dest: '/tmp/{{ nerdctl_archive }}'
+        checksum: 'sha256:{{ nerdctl_sha256 }}'
+        mode: '0444'
+    - name: Extract nerdctl
+      ansible.builtin.unarchive:
+        src: '/tmp/{{ nerdctl_archive }}'
+        dest: '/usr/local/bin'
+        remote_src: 'yes'
+        mode: '0755'
+    - name: Cleanup nerdctl archive
+      ansible.builtin.file:
+        path: '/tmp/{{ nerdctl_archive }}'
+        state: absent
+
+- name: Create Docker Link
+  become: true
+  when: create_docker_link
+  ansible.builtin.file:
+    src: '/usr/local/bin/nerdctl'
+    dest: '/usr/local/bin/docker'
+    state: link

@@ -1,8 +1,0 @@
----
-- name: Download and Install runc
-  get_url: 
-    url: '{{ runc_url }}'
-    dest: '/usr/local/bin/runc'
-    checksum: 'sha256:{{ runc_sha256 }}'
-    mode: '0755'
-  become: true

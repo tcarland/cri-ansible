@@ -1,0 +1,15 @@
+---
+- name: Enable CPU, CPUSET, and I/O Delegation
+  become: true
+  block:
+    - name: Create systemd delegate service directory
+      ansible.builtin.file:
+        path: '/etc/systemd/system/user@.service.d'
+        state: directory
+        mode: '0755'
+    - name: Create cpu delegate service config
+      ansible.builtin.copy:
+        src: 'delegate.conf'
+        dest: '/etc/systemd/system/user@.service.d/delegate.conf'
+        mode: '0644'
+      notify: 'Systemd_reload'
