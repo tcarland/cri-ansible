@@ -6,7 +6,7 @@
       ansible.builtin.get_url:
         url: '{{ cni_plugin_url }}/{{ cni_plugin_archive }}'
         dest: '/tmp/{{ cni_plugin_archive }}'
-        checksum: 'sha256:{{ cni_plugin_url }}/{{ cni_plugin_archive }}.sha256'
+        checksum: 'sha256:{{ cni_plugin_sha256 }}'
         mode: '0444'
     - name: Create target CNI directory
       ansible.builtin.file:
