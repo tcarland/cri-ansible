@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v24.05.12'
+cri_ansible_version: 'v24.06.01'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '1.7.16'
+containerd_version: '1.7.17'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
@@ -13,9 +13,10 @@ runc_version: "v1.1.12"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
 runc_sha256: 'aadeef400b8f05645768c1476d1023f7875b78f52c7ff1967a6dbce236b8cbd8'
 
-cni_plugin_version: 'v1.4.1'
+cni_plugin_version: 'v1.5.0'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
 cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
+cni_plugin_sha256: '{{ cni-plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
 cri_tools_version: 'v1.30.0'
