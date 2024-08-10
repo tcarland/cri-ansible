@@ -19,10 +19,10 @@ cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_sha256: '{{ cni-plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
-cri_tools_version: 'v1.30.1'
+cri_tools_version: 'v1.31.0'
 cri_tools_url: 'https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ cri_tools_version }}'
 cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
-cri_tools_sha256: '71873cdeeeb6c9ee0f79c27b45db38066da81f0c30dcda909b4eedc3aff63f59'
+cri_tools_sha256: '9daa32308090aedee5a7f2ab1f1428fef6f669a64e993f0b5b98db8ef6edd71b'
 
 # note mismatched use of 'v' on version
 nerdctl_version: '1.7.6'
