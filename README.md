@@ -2,7 +2,7 @@ Container Runtime (CRI) Ansible
 ================================
 
 Author:  Timothy C. Arland <tcarland@gmail.com>  
-Version: 24.07.20
+Version: 24.08.24
 
 An Ansible playbook for installing container engines such as *Containerd* 
 or *cri-o*. 
@@ -24,10 +24,10 @@ only supports *containerd*.
 - ***runc*** [v1.1.13](https://github.com/opencontainers/runc)
 - ***containerd*** [v1.7.20](https://github.com/containerd/containerd)
 - ***cni-plugins*** [v1.5.1](https://github.com/containernetworking/plugins)
-- ***cri-tools*** [v1.30.1](https://github.com/kubernetes-sigs/cri-tools)
+- ***cri-tools*** [v1.31.1](https://github.com/kubernetes-sigs/cri-tools)
 - ***nerdctl*** *optional* [v1.7.6](https://github.com/containerd/nerdctl)
-- ***buildkit*** *optional* [v0.15.0](https://github.com/moby/buildkit)
-- ***rootlesskit*** *optional* [v2.2.0](https://github.com/rootless-containers/rootlesskit)
+- ***buildkit*** *optional* [v0.15.2](https://github.com/moby/buildkit)
+- ***rootlesskit*** *optional* [v2.3.1](https://github.com/rootless-containers/rootlesskit)
 - ***slirp4netns*** *optional* [v1.3.1](https://github.com/rootless-containers/slirp4netns)
 
 <br>
@@ -87,8 +87,8 @@ ansible-playbook -i hosts.yml cri-install.yml
 
 ## List of configurable variables
 
-|      variable name        |         Description          |    Default     |
-| ------------------------- | ---------------------------- | -------------- |
+|      variable name        |         Description               |    Default     |
+| ------------------------- | --------------------------------- | -------------- |
 | **container_engine**      | Chooses the container_engine to install, containerd or cri-o | containerd |
 |   **cni_subnet**          | The subnet prefix for the container network | 175.17.1.0/24 |
 |    **cni_name**           | The name of the container network | crinet  |
