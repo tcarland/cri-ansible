@@ -2,7 +2,7 @@ Container Runtime (CRI) Ansible
 ================================
 
 Author:  Timothy C. Arland <tcarland@gmail.com>  
-Version: 24.09.29
+Version: 24.10.18
 
 An Ansible playbook for installing container engines such as *Containerd* 
 or *cri-o*. 
@@ -21,9 +21,9 @@ only supports *containerd*.
 
 ## Components Matrix
 
-- ***runc*** [v1.1.14](https://github.com/opencontainers/runc)
-- ***containerd*** [v1.7.21](https://github.com/containerd/containerd)
-- ***cni-plugins*** [v1.5.1](https://github.com/containernetworking/plugins)
+- ***runc*** [v1.1.15](https://github.com/opencontainers/runc)
+- ***containerd*** [v1.7.23](https://github.com/containerd/containerd)
+- ***cni-plugins*** [v1.6.0](https://github.com/containernetworking/plugins)
 - ***cri-tools*** [v1.31.1](https://github.com/kubernetes-sigs/cri-tools)
 - ***nerdctl*** *optional* [v1.7.7](https://github.com/containerd/nerdctl)
 - ***buildkit*** *optional* [v0.16.0](https://github.com/moby/buildkit)
