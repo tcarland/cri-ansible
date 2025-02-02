@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v25.02.02'
+cri_ansible_version: 'v25.02.05'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '2.0.2'
