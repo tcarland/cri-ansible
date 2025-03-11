@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v25.03.01'
+cri_ansible_version: 'v25.03.11'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.0.2'
+containerd_version: '2.0.3'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
@@ -32,15 +32,15 @@ nerdctl_sha256: '95ff850688a73eace7453f19e74bf4cc8a1f3e458eeb97ef7a6b74de9825df1
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: '91bfb8faec1673f3e7c3a020812acffc50a7d7dd82019461f6cfa46435240903'
 
-buildkit_version: 'v0.20.0'
+buildkit_version: 'v0.20.1'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: 'f87f7485722920843840e6205828155e5084c965d6457672ad258297addca4c5'
+buildkit_sha256: 'a52768180e2fc1e5ce5ba7c039dcb38ee22ec25e230d34bc4fb3c60159f71b'
 
-rootlesskit_version: 'v2.3.2'
+rootlesskit_version: 'v2.3.4'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
-rootlesskit_sha256: '5d402d7995f1e2c369240de3c6f8eb4cc2a3d1f0f4877ac5362044b2e83962e9'
+rootlesskit_sha256: '86639a7d1af2b37413cf98d390b4c38597b88d6ab48749985c0ea30b6fb9eed7'
 
 slirp4netns_version: 'v1.3.2'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
