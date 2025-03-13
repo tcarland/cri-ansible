@@ -35,7 +35,7 @@ nerdctl_full_sha256: '91bfb8faec1673f3e7c3a020812acffc50a7d7dd82019461f6cfa46435
 buildkit_version: 'v0.20.1'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: 'a52768180e2fc1e5ce5ba7c039dcb38ee22ec25e230d34bc4fb3c60159f71b'
+buildkit_sha256: 'a52768180e2fc1e5ce5ba7c039dcb38ee22ec25e230d34bc4fb3c60159f71be0'
 
 rootlesskit_version: 'v2.3.4'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
