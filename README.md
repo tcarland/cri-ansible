@@ -1,31 +1,31 @@
 Container Runtime (CRI) Ansible
 ================================
 
-Author:  Timothy C. Arland <tcarland@gmail.com>  
-Version: 25.03.13
+Author:  Timothy C. Arland <tcarland@gmail.com>
+Version: 25.03.23
 
-An Ansible playbook for installing container engines such as *Containerd* 
-or *cri-o*. 
+An Ansible playbook for installing container engines such as *Containerd*
+or *cri-o*.
 
 By default, the playbook installs *containerd* with *runc*, with additional
 roles for installing support for *buildkit* and *rootless* containers.
 
-There are other container engine playbooks related to Kubernetes, such as 
+There are other container engine playbooks related to Kubernetes, such as
 *Kubespray*, but this playbook is intended more for development or desktop
-environments that prefer to either replace Docker or closer emulate  
-production non-docker nodes using containerd or cri-o. 
+environments that prefer to either replace Docker or closer emulate
+production non-docker nodes using containerd or cri-o.
 
-**Note** The playbook will support *cri-o* at some point, but currently 
+**Note** The playbook will support *cri-o* at some point, but currently
 only supports *containerd*.
 
 
 ## Components Matrix
 
-- ***runc*** [v1.2.5](https://github.com/opencontainers/runc)
-- ***containerd*** [v2.0.3](https://github.com/containerd/containerd)
+- ***runc*** [v1.2.6](https://github.com/opencontainers/runc)
+- ***containerd*** [v2.0.4](https://github.com/containerd/containerd)
 - ***cni-plugins*** [v1.6.2](https://github.com/containernetworking/plugins)
 - ***cri-tools*** [v1.32.0](https://github.com/kubernetes-sigs/cri-tools)
-- ***nerdctl*** *optional* [v2.0.3](https://github.com/containerd/nerdctl)
+- ***nerdctl*** *optional* [v2.0.4](https://github.com/containerd/nerdctl)
 - ***buildkit*** *optional* [v0.20.1](https://github.com/moby/buildkit)
 - ***rootlesskit*** *optional* [v2.3.4](https://github.com/rootless-containers/rootlesskit)
 - ***slirp4netns*** *optional* [v1.3.2](https://github.com/rootless-containers/slirp4netns)
@@ -36,11 +36,11 @@ only supports *containerd*.
 
 ## Configure Inventory
 
-The global variables available control the components being installed, 
+The global variables available control the components being installed,
 save for the *runc*, *cni-plugins*, and *cri-tools* (crictl), which are
-all installed by the playbook regardless. The optional *buildkit* and 
-*rootlesskit* can be controlled by host or group of hosts. Note that 
-use of *rootless* containers will install *nerdctl* regardless of the 
+all installed by the playbook regardless. The optional *buildkit* and
+*rootlesskit* can be controlled by host or group of hosts. Note that
+use of *rootless* containers will install *nerdctl* regardless of the
 variable setting.
 
 Sample Inventory:
@@ -65,10 +65,10 @@ all:
 
 ### Configure a Private Registry
 
-Setting the vars `registry_host` and `registry_cacert` will trigger the 
+Setting the vars `registry_host` and `registry_cacert` will trigger the
 playbook to generate the necessary *hosts.toml* file for *containerd*.
-The `registry_cacert` should be the name of the *PEM* file as installed 
-to */etc/ssl/certs*. The playbook does not install the cert nor verify 
+The `registry_cacert` should be the name of the *PEM* file as installed
+to */etc/ssl/certs*. The playbook does not install the cert nor verify
 its existence.
 
 To install a CA Certificate on Debian/Ubuntu distributions:
