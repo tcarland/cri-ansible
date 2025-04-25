@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v25.04.06'
+cri_ansible_version: 'v25.04.21'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.0.4'
+containerd_version: '2.0.5'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
@@ -13,16 +13,16 @@ runc_version: "v1.2.6"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
 runc_sha256: '0774f49d1b1eebb5849e644db5e4dc6f2b06cee05f13b3d17d5d6ba62d6f2ebc'
 
-cni_plugin_version: 'v1.6.2'
+cni_plugin_version: 'v1.7.1'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
 cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_sha256: '{{ cni_plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
-cri_tools_version: 'v1.32.0'
+cri_tools_version: 'v1.33.0'
 cri_tools_url: 'https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ cri_tools_version }}'
 cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
-cri_tools_sha256: 'f050b71d3a73a91a4e0990b90143ed04dcd100cc66f953736fcb6a2730e283c4'
+cri_tools_sha256: '8307399e714626e69d1213a4cd18c8dec3d0201ecdac009b1802115df8973f0f'
 
 # note intentional mismatched use of 'v' on version
 nerdctl_version: '2.0.4'
@@ -32,10 +32,10 @@ nerdctl_sha256: '2f9d22179868db4f0a1daf2fd65f58a24f8a78efd2d9b17659f56bcdce85efd
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: 'a2b075ec31a8d9d55d030048ed1dacfc701d306e5207d6452ceffb8889abbc84'
 
-buildkit_version: 'v0.20.2'
+buildkit_version: 'v0.21.0'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: 'f64589601e0f06164041dc6be45ed259cffb67539130e434d236551d63ab6030'
+buildkit_sha256: '876820b270a0d0536bf85c42135ff4d449b9104d3723f54248093453656095cf'
 
 rootlesskit_version: 'v2.3.4'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
