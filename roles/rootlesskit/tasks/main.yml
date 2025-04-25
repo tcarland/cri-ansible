@@ -27,6 +27,22 @@
     checksum: 'sha256:{{ slirp4netns_sha256 }}'
     mode: '0755'
 
+- name: Install system configurations
+  become: true
+  block:
+    - name: Set sysctl kernel.unprivileged_userns_clone=1
+      ansible.builtin.copy:
+        src: '99-rootless.conf'
+        dest: '/etc/sysctl.d'
+        mode: '0644'
+      notify: 'Sysctl_reload'
+    - name: Set apparmor config for rootlesskit
+      ansible.builtin.copy:
+        src: 'apparmor-rootless.conf'
+        dest: '/etc/apparmor.d/usr.local.bin.rootlesskit'
+        mode: '0644'
+      notify: 'Apparmor_reload'
+
 - name: Install containerd rootless service
   ansible.builtin.shell: 'CONTAINERD_NAMESPACE=default containerd-rootless-setuptool.sh install'
 
