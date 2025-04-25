@@ -13,16 +13,16 @@ runc_version: "v1.2.6"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
 runc_sha256: '0774f49d1b1eebb5849e644db5e4dc6f2b06cee05f13b3d17d5d6ba62d6f2ebc'
 
-cni_plugin_version: 'v1.6.2'
+cni_plugin_version: 'v1.7.1'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
 cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_sha256: '{{ cni_plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
-cri_tools_version: 'v1.32.0'
+cri_tools_version: 'v1.33.0'
 cri_tools_url: 'https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ cri_tools_version }}'
 cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
-cri_tools_sha256: 'f050b71d3a73a91a4e0990b90143ed04dcd100cc66f953736fcb6a2730e283c4'
+cri_tools_sha256: '8307399e714626e69d1213a4cd18c8dec3d0201ecdac009b1802115df8973f0f'
 
 # note intentional mismatched use of 'v' on version
 nerdctl_version: '2.0.4'
