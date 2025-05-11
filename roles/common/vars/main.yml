@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v25.05.06'
+cri_ansible_version: 'v25.05.10'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '2.0.5'
@@ -37,10 +37,10 @@ buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_ve
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
 buildkit_sha256: 'e0d83a631a48f13232fcee71cbd913e6b11dbde0a45985fa1b99af27ab97086e'
 
-rootlesskit_version: 'v2.3.4'
+rootlesskit_version: 'v2.3.5'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
-rootlesskit_sha256: '86639a7d1af2b37413cf98d390b4c38597b88d6ab48749985c0ea30b6fb9eed7'
+rootlesskit_sha256: '118208e25becd144ee7317c172fc9decce7b16174d5c1bbf80f1d1d0eacc6b5f'
 
 slirp4netns_version: 'v1.3.2'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
