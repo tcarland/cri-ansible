@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v25.05.22'
+cri_ansible_version: 'v25.06.16'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.1.1'
+containerd_version: '2.1.2'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
@@ -42,10 +42,10 @@ rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/do
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
 rootlesskit_sha256: '118208e25becd144ee7317c172fc9decce7b16174d5c1bbf80f1d1d0eacc6b5f'
 
-slirp4netns_version: 'v1.3.2'
+slirp4netns_version: 'v1.3.3'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
 slirp4netns_binary: 'slirp4netns-x86_64'
-slirp4netns_sha256: '4d55a3658ae259e3e74bb75cf058eb05d6e39ad6bbe170ca8e94c2462bea0eb1'
+slirp4netns_sha256: '5618887b671a30a2f7548f2bdf7fba98a53981abc80cfd3183cd28b4dc8b2b97'
 
 cri_apt_packages:
   - net-tools
