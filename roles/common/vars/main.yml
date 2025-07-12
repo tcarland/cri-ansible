@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v25.06.25'
+cri_ansible_version: 'v25.07.12'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '2.1.3'
@@ -25,17 +25,17 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: '8307399e714626e69d1213a4cd18c8dec3d0201ecdac009b1802115df8973f0f'
 
 # note intentional mismatched use of 'v' on version
-nerdctl_version: '2.1.2'
+nerdctl_version: '2.1.3'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: '1a08c35d16a0db0b4ac298adb8e4dab4293803d492cbba7aaf862a48a04c463d'
+nerdctl_sha256: '227390fb16c20d6ab3a7588e5ce72202df1bec7960a2a091599ce3c1bf3fd1d8'
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: 'b3ab8564c8fa6feb89d09bee881211b700b047373c767bec38256d0d68f93074'
+nerdctl_full_sha256: 'e4750ba025c1a9b3d365285f800e683287ee782f0a878bc8c395f28d7bc194ba'
 
-buildkit_version: 'v0.23.1'
+buildkit_version: 'v0.23.2'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: '46a658ddf6b66715b0abff9e2353a58bdec78bb252c001e1065b854cf99c5ca8'
+buildkit_sha256: '2771c3403e3a1f75a83cde387a05365794d3b900c355e864772a36c3ce541f82'
 
 rootlesskit_version: 'v2.3.5'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
