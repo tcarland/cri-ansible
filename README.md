@@ -1,8 +1,8 @@
 Container Runtime (CRI) Ansible
 ================================
 
-Author:  Timothy C. Arland <tcarland@gmail.com>
-Version: 25.09.10
+Author:  Timothy C. Arland <tcarland at gmail dot com>
+Version: 25.10.10
 
 An Ansible playbook for installing container engines such as *Containerd*
 or *cri-o*.
@@ -21,12 +21,12 @@ only supports *containerd*.
 
 ## Components Matrix
 
-- ***runc*** [v1.3.1](https://github.com/opencontainers/runc)
+- ***runc*** [v1.3.2](https://github.com/opencontainers/runc)
 - ***containerd*** [v2.1.4](https://github.com/containerd/containerd)
 - ***cni-plugins*** [v1.8.0](https://github.com/containernetworking/plugins)
 - ***cri-tools*** [v1.34.0](https://github.com/kubernetes-sigs/cri-tools)
-- ***nerdctl*** *optional* [v2.1.4](https://github.com/containerd/nerdctl)
-- ***buildkit*** *optional* [v0.24.0](https://github.com/moby/buildkit)
+- ***nerdctl*** *optional* [v2.1.6](https://github.com/containerd/nerdctl)
+- ***buildkit*** *optional* [v0.25.0](https://github.com/moby/buildkit)
 - ***rootlesskit*** *optional* [v2.3.5](https://github.com/rootless-containers/rootlesskit)
 - ***slirp4netns*** *optional* [v1.3.3](https://github.com/rootless-containers/slirp4netns)
 
@@ -72,16 +72,27 @@ to */etc/ssl/certs*. The playbook does not install the cert nor verify
 its existence.
 
 To install a CA Certificate on Debian/Ubuntu distributions:
-```
+```sh
 sudo cp mycacert.crt /usr/local/share/ca-certificates
 sudo update-ca-certificates
 ls /etc/ssl/certs/mycacert.pem
 ```
 
 ## Run the Ansible Playbook
+
+### Using Rootless mode
+
+For Ubuntu/Debian systems or any system with AppArmor, add the following
+sysctl setting to allow for the creation of the unprivileged namespace.
+```
+kernel.apparmor_restrict_unprivileged_userns = 0
+```
+
+The playbook will also touch '/etc/apparmor.d/' files accordingly.
+
 Technically the inventory file of *./hosts.yml* is considered the default inventory file
 and could be excluded, but a typical playbook run would be as follows:
-```
+```sh
 ansible-playbook -i hosts.yml cri-install.yml
 ```
 
