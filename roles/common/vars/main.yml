@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v25.10.10'
+cri_ansible_version: 'v25.10.25'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '2.1.4'
@@ -32,10 +32,10 @@ nerdctl_sha256: '22857b373edea479a4534ba62cae1c77f2af38f0aac4c91c1c68cf09e29d6f9
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: 'c30545867913696210991fe055761ae2e2d36344da2a351bcd1073fb5c71e232'
 
-buildkit_version: 'v0.25.0'
+buildkit_version: 'v0.25.1'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: '9ca3f3b6bd38ef4419e5262be5f5938dfd9ca91abe28aa26b329f353a98e497f'
+buildkit_sha256: '85aa27c480fc9159705d21a3e66abe305f8dc708b8aeecd1e87bbc5c3de98642'
 
 rootlesskit_version: 'v2.3.5'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
