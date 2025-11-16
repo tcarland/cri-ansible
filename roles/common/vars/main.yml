@@ -1,17 +1,17 @@
 ---
-cri_ansible_version: 'v25.10.25'
+cri_ansible_version: 'v25.11.15'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.1.4'
+containerd_version: '2.2.0'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
 containerd_service_file: 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
 containerd_service_target: '/etc/systemd/system/containerd.service'
 
-runc_version: "v1.3.2"
+runc_version: "v1.3.3"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
-runc_sha256: 'e7a8e30bd6d248f494aae9163521ff4eb112a30602ac56ada0871e3531269c2d'
+runc_sha256: '8781ab9f71c12f314d21c8e85f13ca1a82d90cf475aa5131a7b543fcc5487543'
 
 cni_plugin_version: 'v1.8.0'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
@@ -25,17 +25,17 @@ cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
 cri_tools_sha256: 'a8ff2a3edb37a98daf3aba7c3b284fe0aa5bff24166d896ab9ef64c8913c9f51'
 
 # note intentional mismatched use of 'v' on version
-nerdctl_version: '2.1.6'
+nerdctl_version: '2.2.0'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: '22857b373edea479a4534ba62cae1c77f2af38f0aac4c91c1c68cf09e29d6f9e'
+nerdctl_sha256: '1b3390a832eaeaa1459cf42357da983205da2dd72300a015ad018b3499fc455e'
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: 'c30545867913696210991fe055761ae2e2d36344da2a351bcd1073fb5c71e232'
+nerdctl_full_sha256: 'd3b6a7cb990639fef12b63fb26d34f570786f685d609763f37f98b32430ce747'
 
-buildkit_version: 'v0.25.1'
+buildkit_version: 'v0.26.0'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: '85aa27c480fc9159705d21a3e66abe305f8dc708b8aeecd1e87bbc5c3de98642'
+buildkit_sha256: '323debcfa2952813c680a1b6a8a6da979ddf1df6bed5863c6d72f965fba897e7'
 
 rootlesskit_version: 'v2.3.5'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'

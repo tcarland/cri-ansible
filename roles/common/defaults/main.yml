@@ -1,6 +1,6 @@
 ---
 container_engine: "containerd"
-cni_subnet: "175.17.1.0/24"
+cni_subnet: "172.17.1.0/24"
 cni_name: "crinet"
 cni_interface: "cni0"
 cni_plugin_type: "bridge"
