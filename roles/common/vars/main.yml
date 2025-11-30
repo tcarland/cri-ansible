@@ -1,5 +1,5 @@
 ---
-cri_ansible_version: 'v25.11.15'
+cri_ansible_version: 'v25.12.01'
 
 # note mismatched use of 'v' on version is intentional
 containerd_version: '2.2.0'
@@ -9,9 +9,9 @@ containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
 containerd_service_file: 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
 containerd_service_target: '/etc/systemd/system/containerd.service'
 
-runc_version: "v1.3.3"
+runc_version: "v1.3.4"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
-runc_sha256: '8781ab9f71c12f314d21c8e85f13ca1a82d90cf475aa5131a7b543fcc5487543'
+runc_sha256: '5966ca40b6187b30e33bfc299c5f1fe72e8c1aa01cf3fefdadf391668f47f103'
 
 cni_plugin_version: 'v1.8.0'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
@@ -32,10 +32,10 @@ nerdctl_sha256: '1b3390a832eaeaa1459cf42357da983205da2dd72300a015ad018b3499fc455
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: 'd3b6a7cb990639fef12b63fb26d34f570786f685d609763f37f98b32430ce747'
 
-buildkit_version: 'v0.26.0'
+buildkit_version: 'v0.26.2'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: '323debcfa2952813c680a1b6a8a6da979ddf1df6bed5863c6d72f965fba897e7'
+buildkit_sha256: '1ef7c888f808e7f3f49d9aeeca11f661afe5c0880a4b114cc31c56dee86acd35'
 
 rootlesskit_version: 'v2.3.5'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
