@@ -2,7 +2,7 @@ Container Runtime (CRI) Ansible
 ================================
 
 Author:  Timothy C. Arland <tcarland at gmail dot com>
-Version: 25.12.01
+Version: 25.12.08
 
 An Ansible playbook for installing container engines such as *Containerd*
 or *cri-o*.
