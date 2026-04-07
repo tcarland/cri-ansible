@@ -21,7 +21,7 @@ only supports *containerd*.
 
 ## Components Matrix
 
-- ***runc*** [v1.4.1](https://github.com/opencontainers/runc)
+- ***runc*** [v1.4.2](https://github.com/opencontainers/runc)
 - ***containerd*** [v2.2.2](https://github.com/containerd/containerd)
 - ***cni-plugins*** [v1.9.1](https://github.com/containernetworking/plugins)
 - ***cri-tools*** [v1.35.0](https://github.com/kubernetes-sigs/cri-tools)
