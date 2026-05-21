@@ -1,8 +1,8 @@
 ---
-cri_ansible_version: 'v26.04.06'
+cri_ansible_version: 'v26.05.20'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.2.2'
+containerd_version: '2.3.0'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
@@ -19,10 +19,10 @@ cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_sha256: '{{ cni_plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
-cri_tools_version: 'v1.35.0'
+cri_tools_version: 'v1.36.0'
 cri_tools_url: 'https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ cri_tools_version }}'
 cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
-cri_tools_sha256: '2e141e5b22cb189c40365a11807d69b76b9b3caced89fac2f4ec879408ce2177'
+cri_tools_sha256: '83855e114566a8a8c44c548d515670f51de3a5e1da8b2effb59870e2f10c25a3'
 
 # note intentional mismatched use of 'v' on version
 nerdctl_version: '2.2.2'
@@ -32,15 +32,15 @@ nerdctl_sha256: '6f637760fb2875e3454e97c3de7438fd17281b5996908cbd8ee1c872b0653cc
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
 nerdctl_full_sha256: '8a477f35533c6cc1120c19558d8142967c74f25a4b952b481f48104e030de914'
 
-buildkit_version: 'v0.29.0'
+buildkit_version: 'v0.30.0'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: 'ab8d93c72253b450f34a43e1c480abc52380f4aec3a8a395aebf09489efef7a0'
+buildkit_sha256: '2da148c50540409988c837e62b72176e4a9ad7855548a2dd6ea1cd0c0d2d360d'
 
-rootlesskit_version: 'v2.3.6'
+rootlesskit_version: 'v3.0.0'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
-rootlesskit_sha256: 'afc52e9fa2f7a2d4bb692f675cf3d2f70f3a184f02593e8b18cfbbbc34cbfd41'
+rootlesskit_sha256: '9e9e65f11b0a75ffe78f82284fa84528519b94c6c5032a33e6c80ec1924ef8d1'
 
 slirp4netns_version: 'v1.3.3'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
