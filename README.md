@@ -2,7 +2,7 @@ Container Runtime (CRI) Ansible
 ================================
 
 Author:  Timothy C. Arland <tcarland at gmail dot com>
-Version: 26.06.20
+Version: 26.07.05
 
 An Ansible playbook for installing container engines such as *Containerd*
 or *cri-o*.
@@ -25,8 +25,8 @@ only supports *containerd*.
 - ***containerd*** [v2.3.2](https://github.com/containerd/containerd)
 - ***cni-plugins*** [v1.9.1](https://github.com/containernetworking/plugins)
 - ***cri-tools*** [v1.36.0](https://github.com/kubernetes-sigs/cri-tools)
-- ***nerdctl*** *optional* [v2.3.3](https://github.com/containerd/nerdctl)
-- ***buildkit*** *optional* [v0.31.0](https://github.com/moby/buildkit)
+- ***nerdctl*** *optional* [v2.3.4](https://github.com/containerd/nerdctl)
+- ***buildkit*** *optional* [v0.31.1](https://github.com/moby/buildkit)
 - ***rootlesskit*** *optional* [v3.0.1](https://github.com/rootless-containers/rootlesskit)
 - ***slirp4netns*** *optional* [v1.3.4](https://github.com/rootless-containers/slirp4netns)
 
@@ -101,12 +101,12 @@ ansible-playbook -i hosts.yml cri-install.yml
 |      variable name        |         Description               |    Default     |
 | ------------------------- | --------------------------------- | -------------- |
 | **container_engine**      | Chooses the container_engine to install, containerd or cri-o | containerd |
-|   **cni_subnet**          | The subnet prefix for the container network | 175.17.1.0/24 |
-|    **cni_name**           | The name of the container network | crinet  |
+|    **cni_subnet**         | The subnet prefix for the container network | 175.17.1.0/24 |
+|     **cni_name**          | The name of the container network | crinet  |
 |  **cni_interface**        | The name of the network interface |  cni0   |
 |  **cni_plugin_type**      | The CNI plugin type to use.       | bridge  |
 |  **enable_nerdctl**       | Installs contaiNERDctl CLI        |  true   |
-| **enable_buildkit**       | Installs the buildkit component for building containers  |  true   |
+|  **enable_buildkit**      | Installs the buildkit component for building containers  |  true   |
 | **enable_rootlesskit**    | Installs the kit for enabling rootless containers  |  true  |
 | **enable_cpu_delegation** | Support for setting CPU, CPUSET and I/O Delegation to container limits | false |
 | **create_docker_link**    | Creates a symlink from docker to nerdctl  | false  |
