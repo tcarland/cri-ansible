@@ -1,17 +1,17 @@
 ---
-cri_ansible_version: 'v26.08.13'
+cri_ansible_version: 'v26.10.10'
 
 # note mismatched use of 'v' on version is intentional
-containerd_version: '2.3.4'
+containerd_version: '2.4.1'
 containerd_url: 'https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}'
 containerd_archive: 'containerd-{{ containerd_version }}-linux-amd64.tar.gz'
 containerd_sha256: '{{ containerd_url }}/{{ containerd_archive }}.sha256sum'
 containerd_service_file: 'https://raw.githubusercontent.com/containerd/containerd/main/containerd.service'
 containerd_service_target: '/etc/systemd/system/containerd.service'
 
-runc_version: "v1.5.1"
+runc_version: "v1.5.2"
 runc_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.amd64"
-runc_sha256: '177df879d50c913eb205e898d5c1c05a18f574053c0ce5524c471208eaf06f6f'
+runc_sha256: '599f6f94ff8c5057241eff0d54c3c74f95c34935b6457b33fe545defc61e9488'
 
 cni_plugin_version: 'v1.9.1'
 cni_plugin_url: 'https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}'
@@ -19,33 +19,33 @@ cni_plugin_archive: 'cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz'
 cni_plugin_sha256: '{{ cni_plugin_url }}/cni-plugins-linux-amd64-{{ cni_plugin_version }}.tgz.sha256'
 cni_plugin_target: '/opt/cni/bin'
 
-cri_tools_version: 'v1.36.0'
+cri_tools_version: 'v1.37.0'
 cri_tools_url: 'https://github.com/kubernetes-sigs/cri-tools/releases/download/{{ cri_tools_version }}'
 cri_tools_archive: 'crictl-{{ cri_tools_version }}-linux-amd64.tar.gz'
-cri_tools_sha256: '83855e114566a8a8c44c548d515670f51de3a5e1da8b2effb59870e2f10c25a3'
+cri_tools_sha256: '{{ cri_tools_url }}/{{ cri_tools_archive }}.sha256'
 
 # note intentional mismatched use of 'v' on version
-nerdctl_version: '2.3.4'
+nerdctl_version: '2.4.1'
 nerdctl_url: 'https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}'
 nerdctl_archive: 'nerdctl-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_sha256: 'b8dfbc4c9fca44bea9220a8747a0068fc10fdc8054806898c835e89dbd385b57'
+nerdctl_sha256: 'f6bbf02fd8a299cbcbc71a0bad113c1b63b3f33689bbb7d51b0fa98c6d361d5e'
 nerdctl_full_archive: 'nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz'
-nerdctl_full_sha256: '40a80a6eec6fc4f225473a87946c2098821b6ec31becef0120c8a50d7b4e432c'
+nerdctl_full_sha256: 'ff018f11ac2f1354bf7b3aaaca6e0b52d81139c746a89134744d0b7be3a0e62f'
 
-buildkit_version: 'v0.31.2'
+buildkit_version: 'v0.34.0'
 buildkit_url: 'https://github.com/moby/buildkit/releases/download/{{ buildkit_version }}'
 buildkit_archive: 'buildkit-{{ buildkit_version }}.linux-amd64.tar.gz'
-buildkit_sha256: 'fbabdb72433a35f5bb646e4cd424bf8567e5d055710cf55840f7af2020640791'
+buildkit_sha256: '14813b1fb2a40082114e6d386c6fc5e7dd5298176ce7ee1a18bc33e73e109ac3'
 
-rootlesskit_version: 'v3.0.2'
+rootlesskit_version: 'v3.2.0'
 rootlesskit_url: 'https://github.com/rootless-containers/rootlesskit/releases/download/{{ rootlesskit_version }}'
 rootlesskit_archive: 'rootlesskit-x86_64.tar.gz'
-rootlesskit_sha256: 'f4f2764cdd99db4f3fa715acac9d760c49a5e7c2838f180bdbe3188cec248dfb'
+rootlesskit_sha256: 'ff612d1d35854a52569acc4a4e9152f41504e69dcc13ff4c94cc9040dc28b3d9'
 
-slirp4netns_version: 'v1.3.4'
+slirp4netns_version: 'v1.3.6'
 slirp4netns_url: 'https://github.com/rootless-containers/slirp4netns/releases/download/{{ slirp4netns_version }}'
 slirp4netns_binary: 'slirp4netns-x86_64'
-slirp4netns_sha256: 'e8d0440de8d8c87072138883bc27cfa02f8b0e8a504badbf335c41f794788cc2'
+slirp4netns_sha256: '411167abceff1fc8a7c562f53ed9f26d3ec8a17df4e2fe6eaa3bd53f1c1e1d48'
 
 cri_apt_packages:
   - net-tools
